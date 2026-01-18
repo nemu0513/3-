@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="assets/CSS/style.css">
+  
 </head>
 <body>
   <header>
@@ -73,15 +74,6 @@
       </div>
     </div>
     <form>
-      <!-- <label for="year">年:</lanel> -->
-      <!-- <select name="year" id="year"> </select> -->
-
-    <!-- <label for="month">月:</label> -->
-    <!-- <select name="month" id="month"></select> -->
-
-    <!-- <label for="day">日:</label> -->
-    <!-- <select name="day" id="day"></select> -->
-
     <select id="year">
       <!-- <option value="2024">2024</option> -->
       <!-- <option value="2025">2025</option> -->
@@ -99,73 +91,15 @@
       <option value="2">2</option>
       <option value="3">3</option>
     </select>日
+
+    <button id="btn">実行</button>
+    <p>結果:<span id="result"></span></p>
+    <div id="result"></div>
     </form>
     <small>
       <p>&copy; 2026 nemu. All Rights Reserved.</p>
     </small>
   </footer>
-
-  <script>
-    // document.addEventListener('DOMContentLoaded',function() {
-      // const yearsSelect=document.getElementById('year');
-      // const monthSelect=document.getElementById('month');
-      // const daySelect=document.getElementById('day')
-
-      // const currentYear=new Date().getFullYear();
-
-      // for (let i=currentYear;i >= 1960;i--) {
-        // const option=document.creatElement('option');
-        // option.value=i;
-        // option.textContent=i+'年';
-        // yearSelect.appendChild(option);
-      // }
-
-      // for(let i=1;i <=12;i++) {
-        // const option=document.createElement('option');
-        // option.value=i;
-        // option.textContent=i+'月';
-        // monthSelect.appendChild(option);
-      // }
-    // });
-
-    const yearSelect=document.getElementById('year');
-    const monthSelect=document.getElementById('month');
-    const daySelect=document.getElementById('day');
-
-    const today=new Date();
-    const currentYear=today.getFullYear();
-
-    for (let y=1960;y <= currentYear;y++) {
-      const option=document.createElement('option');
-      option.value=y;
-      option.textContent=y;
-      yearSelect.appendChild(option);
-    }
-
-    for (let m=1;m <= 12;m++) {
-      const option=document.createElement('option');
-      option.value=m;
-      option.textContent=m;
-      monthSelect.appendChild(option);
-    }
-
-    function updateDays() {
-      const selectedMonth=parseInt(monthSelect.value);
-      const selectedYear=parseInt(yearSelect.value);
-      const lastDay=new Date(selectedYear,selectedMonth,0).getDate();
-    
-    daySelect.innerHTML='';
-    for (let d=1;d <=lastDay;d++) {
-      const option=document.createElement('option');
-      option.value=d;
-      option.textContent=d;
-      daySelect.appendChild(option);
-    }
-  }
-
-  yearSelect.addEventListener('change',updateDays);
-  monthSelect.addEventListener('change',updateDays);
-  updateDays();
-  </script>
+  <script src="assets/CSS/script.js"></script>
 </body>
 </html>
